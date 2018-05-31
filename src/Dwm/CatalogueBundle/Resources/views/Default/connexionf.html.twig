@@ -1,0 +1,75 @@
+{# empty Twig template #}
+{# empty Twig template #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <link rel="stylesheet" type="text/css" href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic')}}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/botstrap.min.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/styl.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/font-awesome/font-awesome.min.css')}}" />
+ 
+  
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/botstrap.min.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/styll.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/button.css')}}" />
+
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/red.css')}}" />
+<!--
+Accord Template
+http://www.templatemo.com/tm-478-accord
+--> 
+
+    <title>erreur</title>
+</head>
+
+<body class="contact-page">
+   <div id="main_container">
+  <div class="top_bar">
+   {# <div class="top_search">
+  
+      <form class="form-inline navbar-search" method="post" action="products" >
+		<input id="srchFld" class="srchTxt" type="text" style="height:20px"  />
+		 
+		  <button type="submit" id="submitButton" class="btn btn-primary" style="line-height:1.428571;background-color: #333;border: none;">Go</button>
+    </form>
+  
+    </div>#}
+       
+      <div class="left_menu_corner"></div>
+      <ul class="menu">
+          <li><a href="inscrit" class="nav1" style="color: whitesmoke"> Back</a></li>
+        <li class="divider"></li>
+        </ul>
+     
+        
+       </div>
+  </div>
+  
+   
+
+                 
+                  
+                    <div class="content-main contact-content" style="height:1100px;background-color:transparent">
+                        <div class="contact-content-upper">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                  
+                                    <h2 style="font-size: 60px"> Désolé !</h2>
+                                    <br> <br> <br>
+                                   <h2>
+                                      {% for flashMessage in app.session.flashbag.get('notice') %}
+{{ flashMessage }}
+ 
+{% endfor %}</h2>
+
+                    </div> <!-- .contact-content -->
+                </div> <!-- .main-page -->
+            </div> <!-- .row -->
+                    
+             
+
+{# empty Twig template #}

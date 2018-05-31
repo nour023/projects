@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <html>
+    <head>
+        <title>  {% block title %} menu {% endblock %}</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <meta name="author" content="">        
+    <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/link.css') }}" type="text/css" />
+
+
+    </head>
+    <body >
+    <div id="entete" style="background-color:black;  height:70px" >
+          <div class="background" style="color: white">
+        
+            <br>
+   
+          
+    
+              <form class="form-inline navbar-search" method="post" action="deconnection" >
+		 
+		  <button type="submit" id="submitButton" class="btn" style="padding-bline-height:1.428571;background-color:black;border: none;  position: absolute;
+  right: 0;
+  outline: 0px;
+  top: 0;
+  display: block;
+     width: 120px;
+    height: 58px;
+  padding: 0;
+  border: none;
+  margin-top: 14px; /* margin-top + border-width */
+  margin-right: 155px; /* border-width */
+ 
+  color:whitesmoke;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  line-height: 60px;">Déconnexion</button>
+    </form>
+            </div>
+</div>
+   
+    
+    <div id="main" style="float:left; width: 290px; height:420px;">
+        <div class="back" style="color:black; width: 240px; height:420px;">
+            <br> <br> <br> <br> <br>
+ 
+        <ul >
+
+            <li ><a  href="listClient">Gérer client</a></li>
+            <li ><a  href="listFournisseur">Gérer Fournisseurs</a></li>
+           <li ><a  href="listFamille">Gérer familles</a></li>
+            <li ><a  href="listSousFamille">Gérer sous familles</a></li>
+        </ul>
+                    </div>
+    </div>
+ 
+    <div id="content" style=" height:100%;b">
+       
+
+<div style="overflow-x:auto">
+    
+    
+  
+</div>
+        <br> <br> <br>       <br> <br> <br>     <br> <br> <br>     <br> <br> <br>  <br> <br> <br> <br> <br> <br> 
+ 
+        <br> <br> <br>       <br> <br> <br>
+        <br> <br> <br>       
+           <footer class="row" style="background-color: black;height: 100px" >
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    
+              <p class="pull-right" style="color: whitesmoke;font-size: 30px;margin-left: 1370px">&copy;NYshop</p>
+                </div>    
+            </footer>  <!-- .row -->    
+        </div>
+  
+    </body>
+    </html>
+    
+    
+{% endblock %}

@@ -1,0 +1,115 @@
+<html>
+   <head>
+      <title>   list fournisseur </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+       <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/bgi.css') }}" type="text/css" />
+         <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/lnk.css') }}" type="text/css" />
+   </head>
+   <body >
+  <div id="entete" style="background-color:black;  height:70px" >
+          <div class="background" style="color: white">
+        <center>  
+            <br>
+   
+            NYshop
+        </center>  
+              
+              <form class="form-inline navbar-search" method="post" action="deconnection" >
+		 
+		  <button type="submit" id="submitButton" class="btn" style="padding-bline-height:1.428571;background-color:black;border: none;  position: absolute;
+  right: 0;
+  outline: 0px;
+  top: 0;
+  display: block;
+     width: 120px;
+    height: 58px;
+  padding: 0;
+  border: none;
+  margin-top: 14px; /* margin-top + border-width */
+  margin-right: 155px; /* border-width */
+ 
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  line-height: 60px;">Déconnexion</button>
+    </form>
+            </div>
+</div>
+ 
+   <div id="main" style="float:left; width: 290px; height:100%;" >
+         <div class="back" style="color: black; width: 240px; height: 440px">
+        <br>
+        <br> <br> <br>
+        <ul>
+
+            
+            <li><a href="listFamille">BACK</a></li>
+
+      
+       
+      </ul>
+   </div>
+   </div>
+   <div id="main" style="float:right; width: 170px; height:100%;">
+  
+    </div>
+    <div id="content" style="height: 100%">
+        <br>    
+        
+       <div id="content" style="height: 100%">
+        <br>  <br>  <br> 
+        <div style="overflow-x:auto">
+    <div class="transbox" style="width: 85%">
+    <br> 
+    <center>
+
+
+
+
+    <form method="get" action="modifFamille">
+    <table>
+        <tr>
+            <td>
+                Code
+            </td>
+
+            <td >
+                <input type="text" name="code" value="{{ famille.code }}">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                Libelle
+            </td>
+
+            <td >
+                <input type="text" name="libelle" value="{{ famille.libelle }}">
+            </td>
+
+        </tr>
+        <tr>
+            <td  colspan="2" >
+
+                <input type="submit" name="envoyer" value="MODIFIER">
+                <input type="hidden" name="id" value="{{ famille.id }}">
+            </td>
+
+        </tr>
+    </table>
+
+            
+            </div>
+                       <br>
+
+       
+   </div>
+        </div>
+          <div id="footer" style="background-color :black;text-align:center;clear:both ; height:80px;color: white ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright" style="color:white;font-size: 15px;margin-right: 20px">&copy;NYshop
+                    
+        </div>
+  </div>
+  
+    

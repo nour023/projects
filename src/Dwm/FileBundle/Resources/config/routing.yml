@@ -1,0 +1,3 @@
+new_article:
+    pattern:  /newArticle
+    defaults: { _controller: DwmFileBundle:Upload:uploadArticle }

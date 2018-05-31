@@ -1,0 +1,125 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+   <html>
+   <head>
+      <title>  {% block title %} list fournisseur {% endblock %}</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+       <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/bgi.css') }}" type="text/css" />
+         <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/lnk.css') }}" type="text/css" />
+   </head>
+   <body >
+  <div id="entete" style="background-color:black;  height:70px" >
+          <div class="background" style="color: white">
+        <center>  
+            <br>
+   
+            NYshop
+        </center>  
+              
+              <form class="form-inline navbar-search" method="post" action="deconnection" >
+		 
+		  <button type="submit" id="submitButton" class="btn" style="padding-bline-height:1.428571;background-color:black;border: none;  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+     width: 120px;
+    height: 58px;
+  padding: 0;
+  border: none;
+  margin-top: 14px; /* margin-top + border-width */
+  margin-right: 155px; /* border-width */
+ 
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  line-height: 60px;">Déconnexion</button>
+    </form>
+            </div>
+</div>
+  
+   <div id="main" style="float:left; width: 200px; height:100%;" >
+         <div class="back" style="color: black; width: 240px; height: 440px">
+        <br>
+        <br> <br> <br>
+        <ul>
+   <li><a href="menu">BACK</a></li>
+   <li>       <a  href="PIFournisseur">Fournisseurs en attente</a></li>
+         </ul>
+   </div>
+   </div>
+   <div id="main" style="float:right; width: 170px; height:100%;">
+        {% block main %}
+
+        {% endblock %}
+
+    </div>
+    <div id="content" style="height: 100%">
+        <br>    
+        
+       <div id="content" style="height: 100%">
+        <br>  <br>  <br> 
+        <div style="overflow-x:auto">
+    <div class="transbox" style="width: 105%">
+    
+    <center>
+
+      <table border="2" width="50%" bgcolor="white" style="margin-right: 200px">
+         <tr >
+            <td><i>id</i></td><td><i>code</i></td><td><i>libelle</i></td><td><i>adresse</i></td>
+            <td><i>Ville</i></td><td><i>Code postal</i></td><td style="width: 20px"><i>Email</i></td>
+            <td><i>tel</i></td><td><i>SUPPRIMER</i></td>{#<td><i>MODIFIER</i></td>#}
+         </tr>
+         {% for p in fournisseur %}
+            <tr>
+               <td>
+                  {{ p.id }}
+               </td>
+               <td>
+                  {{ p.code }}
+               </td>
+               
+               <td>
+                  {{ p.libelle }}
+               </td>
+               <td>
+                  {{ p.adresse }}
+               </td>
+               <td>
+                  {{ p.ville }}
+               </td>
+               <td>
+                  {{ p.codePostal }}
+               </td>
+               <td>
+                  {{ p.Email }}
+               </td>
+               <td>
+                  {{ p.tel }}
+               </td>
+               <td ><form method="get" action="suppFournisseur" >
+                     <input type="submit" name="ok" value="SUPPRIMER" class="buttonn">
+                     <input type="hidden" name="id" value="{{ p.id }}">
+                  </form>
+               </td>
+            {#   <td ><form method="get" action="vmodifFournisseur">
+                     <input type="submit" name="ok" value="MODIFIER" class="buttonn" >
+                     <input type="hidden" name="i" value="{{ p.id }}">
+                  </form>
+               </td>#}
+            </tr>
+         {% endfor %}
+
+      </table><br>
+</div>
+     
+   </div>
+   <div id="footer" style="background-color :black;text-align:center;clear:both ; height:80px;color: white ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright" style="color:white;font-size: 15px;margin-right: 20px">&copy;NYshop
+                    
+        </div>
+  </div>
+ 
+  
+  
+{% endblock %} 

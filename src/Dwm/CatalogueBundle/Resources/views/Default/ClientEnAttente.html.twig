@@ -1,0 +1,134 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+   <html>
+   <head>
+      <title>  {% block title %} list fournisseur {% endblock %}</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+       <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/bgi.css') }}" type="text/css" />
+         <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/lnk.css') }}" type="text/css" />
+   </head>
+   <body >
+  <div id="entete" style="background-color:black;  height:70px" >
+          <div class="background" style="color: white">
+        <center>  
+            <br>
+   
+            NYshop
+        </center>  
+              
+              <form class="form-inline navbar-search" method="post" action="deconnection" >
+		 
+		  <button type="submit" id="submitButton" class="btn" style="padding-bline-height:1.428571;background-color:black;border: none;  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+     width: 120px;
+    height: 58px;
+  padding: 0;
+  border: none;
+  margin-top: 14px; /* margin-top + border-width */
+  margin-right: 155px; /* border-width */
+ 
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  line-height: 60px;">Déconnexion</button>
+    </form>
+            </div>
+</div>
+   
+   <div id="main" style="float:left; width: 290px; height:100%;" >
+         <div class="back" style="color: black; width: 240px; height: 440px">
+        <br>
+        <br> <br> <br>
+        <ul>
+
+            
+         <li><a href="listClient">BACK</a></li>
+      
+       
+      </ul>
+   </div>
+   </div>
+   <div id="main" style="float:right; width: 170px; height:100%;">
+        {% block main %}
+
+        {% endblock %}
+
+    </div>
+    <div id="content" style="height: 100%">
+        <br>    
+        
+       <div id="content" style="height: 100%">
+        <br>  <br>  <br> 
+        <div style="overflow-x:auto">
+    <div class="transbox" style="width: 95%">
+    <br> 
+    <center>
+<table border="2" width="70%" bgcolor="white" >
+            <tr >
+                <td><i>Id</i></td><td><i>Nom</i></td><td><i>Prénom</i></td>
+                <td><i>Sexe</i></td><td><i/>Login<i></td><td><i>Mot de passe</i></td><td>
+                    <i>Adresse</i></td><td><i>Compte</i></td>
+                    
+                <td><i>ajouter</i></td><td><i>supprimer</i></td>
+             </tr>
+            {% for p in client %}
+                <tr>
+                    <td>
+                        {{ p.id }}
+                    </td>
+                    <td>
+                        {{ p.nom }}
+                    </td>
+                    <td>
+                        {{ p.prenom }}
+                    </td>
+                    <td>
+                        {{ p.sexe }}
+                    </td>
+                    <td>
+                        {{ p.login }}
+                    </td>
+                    <td>
+                        {{ p.mdp }}
+                    </td>
+                    <td>
+                        {{ p.adresse }}
+                    </td>
+                      <td>
+                        {{ p.compte }}
+                    </td>
+                    <td>
+                        <form method="GET" action="addclient">
+                        <input type="submit" name="ajout" value="ajouter" class="buttonn">
+                        <input type="hidden" name="nom" value="{{ p.nom }}">
+                        <input type="hidden" name="prenom" value="{{ p.prenom }}">
+                        <input type="hidden" name="sexe" value="{{ p.sexe }}">
+                        <input type="hidden" name="login" value="{{ p.login }}">
+                        <input type="hidden" name="mdp" value="{{ p.mdp }}">
+                        <input type="hidden" name="id" value="{{ p.id }}">
+                        <input type="hidden" name="adresse" value="{{ p.adresse }}">
+                        <input type="hidden" name="compte" value="{{ p.compte }}">
+                        </form>
+                    <td>
+                        <form method="GET" action="rejeter">
+                        <input type="submit" name="supprimer" value="rejeter" class="buttonn">
+                        <input type="hidden" name="id" value="{{ p.id }}">
+                        </form>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </table>
+                    </div>
+                     </div>
+                       <div id="footer" style="background-color :black;text-align:center;clear:both ; height:80px;color: white ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright"style="color:white;font-size: 15px;margin-right: 20px">&copy;NYshop
+                    
+        </div>
+  </div>
+ 
+   </html>
+  
+{% endblock %}

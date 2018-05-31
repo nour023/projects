@@ -1,0 +1,89 @@
+<html>
+    <body>
+    <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/accueil.css') }}" type="text/css" />
+        <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/button.css') }}" type="text/css" />
+          <div id="entete" style="background-color:gray;  height:70px" >
+              {% block entete %}
+                
+<table align="right">      
+    
+    <tr>
+        
+<td><a href="accueil" target="_blank"><i>Back</i></a></td>
+  
+                
+    </tr>
+    </table>
+{% endblock %}
+</div>
+              <div id="content" style="height:500px" > 
+                  {% block content %}
+                  <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/bgi.css') }}" type="text/css" />
+                
+                  
+        <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/button.css') }}" type="text/css" />
+
+    {{ form_start(frm) }}
+    <table >
+        <tr>
+            <td>{{ form_label(frm.libelle) }}</td>
+            <td>{{ form_widget(frm.libelle) }}</td>
+            <td>{{ form_errors(frm.libelle) }}</td>
+
+        </tr>
+
+        <tr>
+            <td>{{ form_label(frm.code) }}</td>
+            <td>{{ form_widget(frm.code) }}</td>
+            <td>{{ form_errors(frm.code) }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ form_label(frm.adresse) }}</td>
+            <td>{{ form_widget(frm.adresse) }}</td>
+            <td>{{ form_errors(frm.adresse) }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ form_label(frm.ville) }}</td>
+            <td>{{ form_widget(frm.ville) }}</td>
+            <td>{{ form_errors(frm.ville) }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ form_label(frm.codePostal) }}</td>
+            <td>{{ form_widget(frm.codePostal) }}</td>
+            <td>{{ form_errors(frm.codePostal) }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ form_label(frm.Email) }}</td>
+            <td>{{ form_widget(frm.Email) }}</td>
+            <td>{{ form_errors(frm.Email) }}</td>
+
+        </tr>
+        <tr>
+            <td>{{ form_label(frm.tel) }}</td>
+            <td>{{ form_widget(frm.tel) }}</td>
+            <td>{{ form_errors(frm.tel) }}</td>
+
+        </tr>
+       
+    </table>
+    {{ form_end(frm) }}
+
+
+                  
+                  
+                  {% endblock %}
+                  </div>
+                  
+                  
+                  
+                  <div id="footer" style="background-color :gray;text-align:center;clear:both ; height:100px ">
+                      {% block footer %}
+        <p  style="text-align: justify ; color: white  ;text-align: justify; font-style: oblique">Tous droits réservés </p>
+    {% endblock %}
+                      </div>
+        </body>
+    </html>

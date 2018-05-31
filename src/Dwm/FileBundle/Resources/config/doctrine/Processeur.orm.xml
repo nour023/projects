@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\Processeur" table="processeur">
+    <id name="idProc" type="integer" column="id_proc">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="proc" type="string" column="proc" length="50" nullable="true"/>
+  </entity>
+</doctrine-mapping>

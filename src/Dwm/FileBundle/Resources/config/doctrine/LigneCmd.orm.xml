@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\LigneCmd" table="ligne_cmd">
+    <indexes>
+      <index name="id_produit" columns="id_produit"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="qte" type="integer" column="qte" nullable="true"/>
+    <field name="prix" type="float" column="prix" precision="10" scale="0" nullable="true"/>
+    <field name="tva" type="float" column="tva" precision="10" scale="0" nullable="true"/>
+    <field name="remise" type="float" column="remise" precision="10" scale="0" nullable="true"/>
+    <field name="numCmd" type="integer" column="num_cmd" nullable="false"/>
+    <many-to-one field="idProduit" target-entity="Produit">
+      <join-columns>
+        <join-column name="id_produit" referenced-column-name="id_produit"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

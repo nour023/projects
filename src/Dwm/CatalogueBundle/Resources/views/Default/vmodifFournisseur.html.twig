@@ -1,0 +1,73 @@
+<form method="get" action="modifFournisseur">
+<table xmlns="http://www.w3.org/1999/html">
+    <tr>
+
+        <td>
+            code
+        </td>
+        <td>
+            <input type="text" name="code" value="{{ fournisseur.code }}">
+        </td>
+        </tr>
+    <tr>
+        <td>
+           libelle
+        </td>
+        <td>
+            <input type="text" name="libelle" value="{{ fournisseur.libelle}}">
+        </td>
+        </tr>
+    <tr>
+        <td>
+            adresse
+        </td>
+        <td>
+            <input type="text" name="adresse" value="{{ fournisseur.adresse}}">
+        </td>
+        </tr>
+    <tr>
+        <td>
+            ville
+        </td>
+    <td>
+        <input type="text" name="ville" value="{{ fournisseur.ville }}">
+    </td>
+    </tr>
+    <tr>
+        <td>
+            codePostal
+        </td>
+        <td>
+            <input type="text" name="codePostal" value="{{ fournisseur.codePostal }}">
+        </td>
+        </tr>
+    <tr>
+        <td>
+            Email
+        </td>
+        <td>
+            <input type="text" name="Email" value="{{ fournisseur.Email }}">
+
+        </td>
+        </tr>
+    <tr>
+        <td>
+            tel
+        </td>
+        <td>
+            <input type="text" name="tel" value="{{ fournisseur.tel }}">
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" width="100%">
+
+            <input type="submit" name="envoer" value="CONFIRMER LA MODIFICATION">
+            <input type="hidden" name="id" value="{{ fournisseur.id }}">
+
+        </td>
+
+    </tr>
+
+</table>
+    </form>

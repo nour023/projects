@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\Produit" table="produit">
+    <indexes>
+      <index name="id_sfam" columns="id_sfam"/>
+      <index name="id_admin" columns="id_admin"/>
+    </indexes>
+    <id name="idProduit" type="integer" column="id_produit">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="refProd" type="string" column="ref_prod" length="50" nullable="true"/>
+    <field name="prix" type="float" column="prix" precision="10" scale="0" nullable="true"/>
+    <field name="datePub" type="date" column="date_pub" nullable="true"/>
+    <field name="idFamille" type="integer" column="id_famille" nullable="true"/>
+    <field name="proc" type="string" column="proc" length="50" nullable="true"/>
+    <field name="disque" type="string" column="disque" length="50" nullable="true"/>
+    <field name="memoire" type="string" column="memoire" length="50" nullable="true"/>
+    <field name="systeme" type="string" column="systeme" length="50" nullable="true"/>
+    <field name="graphique" type="string" column="graphique" length="50" nullable="true"/>
+    <field name="ecran" type="string" column="ecran" length="50" nullable="true"/>
+    <field name="descImp" type="text" column="desc_imp" length="65535" nullable="true"/>
+    <field name="etat" type="string" column="etat" length="50" nullable="false"/>
+    <field name="carteSon" type="string" column="carte_son" length="50" nullable="true"/>
+    <field name="reseau" type="string" column="reseau" length="50" nullable="true"/>
+    <field name="webcam" type="boolean" column="webcam" nullable="true"/>
+    <field name="micro" type="boolean" column="micro" nullable="true"/>
+    <field name="cadeau" type="string" column="cadeau" length="50" nullable="true"/>
+    <field name="graveur" type="string" column="graveur" length="50" nullable="true"/>
+    <field name="clavier" type="boolean" column="clavier" nullable="true"/>
+    <field name="souris" type="boolean" column="souris" nullable="true"/>
+    <field name="fonctionImprimante" type="string" column="fonction_imprimante" length="50" nullable="true"/>
+    <field name="couleurImprimante" type="string" column="couleur_imprimante" length="50" nullable="true"/>
+    <field name="formatImprimante" type="string" column="format_imprimante" length="50" nullable="true"/>
+    <field name="impRectoVersoImprimante" type="string" column="imp_recto_verso_imprimante" length="50" nullable="true"/>
+    <field name="connectiviteImprimante" type="string" column="connectivite_imprimante" length="50" nullable="true"/>
+    <field name="tailleTv" type="string" column="taille_tv" length="50" nullable="true"/>
+    <field name="ecranTactileTv" type="string" column="ecran_tactile_tv" length="50" nullable="true"/>
+    <field name="garantieTv" type="string" column="garantie_tv" length="50" nullable="true"/>
+    <field name="memoireAccessoire" type="string" column="memoire_accessoire" length="50" nullable="true"/>
+    <field name="garantieAccessoire" type="string" column="garantie_accessoire" length="50" nullable="true"/>
+    <field name="typeProduit" type="string" column="type_produit" length="50" nullable="false"/>
+    <many-to-one field="idAdmin" target-entity="Admin">
+      <join-columns>
+        <join-column name="id_admin" referenced-column-name="id_admin"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idSfam" target-entity="SousFamille">
+      <join-columns>
+        <join-column name="id_sfam" referenced-column-name="id_sfam"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

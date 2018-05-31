@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\Commande" table="commande">
+    <indexes>
+      <index name="id_client" columns="id_client"/>
+    </indexes>
+    <id name="numCmd" type="integer" column="num_cmd">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateCmd" type="string" column="date_cmd" length="50" nullable="true"/>
+    <field name="dateLivraison" type="string" column="date_livraison" length="50" nullable="true"/>
+    <field name="adresse" type="string" column="adresse" length="50" nullable="true"/>
+    <field name="totalttc" type="float" column="totalTTC" precision="10" scale="0" nullable="true"/>
+    <field name="etatCmd" type="string" column="etat_cmd" length="50" nullable="true"/>
+    <many-to-one field="idClient" target-entity="Client">
+      <join-columns>
+        <join-column name="id_client" referenced-column-name="id_client"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

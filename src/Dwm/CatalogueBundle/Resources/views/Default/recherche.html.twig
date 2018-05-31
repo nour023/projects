@@ -1,0 +1,197 @@
+  <head>
+   <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/red.css') }}" type="text/css" />
+ <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/button.css') }}" type="text/css" />
+ <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/tabl.css') }}" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/botstrap.min.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/styll.css')}}" />
+
+
+
+ <link id="callCss" rel="stylesheet" href="{{ asset('bundles/acmedemo/themes/bootshop/bootstrap.min.css')}}" media="screen"/>
+ 
+<!--
+Accord Template
+http://www.templatemo.com/tm-478-accord
+--> 
+
+    <title></title>
+</head>
+
+<body class="contact-page">
+   <div id="main_container">
+  <div class="top_bar">
+    <div class="top_search">
+  
+      <form method="GET" action="deconnection">
+                    <input type="submit" name="dec" value="Déconnexion" class="but" >
+                    </form>
+  
+    </div>
+       <div class="left_menu_corner"></div>
+      <ul class="menu">
+        <li class="divider"></li>
+{#        <li><a href="vmodifFournisseur" class="nav2">Modifier informations</a></li></ul>
+#}        
+       </div> 
+    
+  </div>
+  
+    <div class="main-body">
+        <div class="container">
+<br><br><br>
+<table border="0" align="center" width="70%" ><tr>
+    {% set foo = 0 %}
+{% for i in image %}
+    {% if i.article_id.Sfamille.familleid.libelle==var %}
+        <td>  <div class="box about_box_line card" style="background-color: black;height:300px;width: 201px">
+                                            <div class="box-icon"  style="height: 200px;background-color: #333;width: 201px">
+            <img  src="{{ i.src }}"   style="height: 200px; width: 200px;" alt="Image" class="img-responsive">
+            <div class="inner_search">
+                <H3 class="white">{{i.article_id.libelle}}<br>
+                                                    prix :
+                                                    {{i.article_id.prix}} $</H3>
+                </div>
+            </div>
+            <div class="info">
+<br><br><br><form method="GET" action="consulter" >
+ <input type="submit" value="consulter" class="but" >
+        <input type="hidden" name="produit" value="{{i.article_id.id}}">
+         <input type="hidden" name="jjjj" value="{{i.id}}"></form><br>
+         </div>
+         </div>
+         </td>
+{#            <td> {{ i.article_id.libelle}}</td><td> {{ i.article_id.prix}}$</td>
+#}       
+        {% set  foo = foo+1 %}
+       {% if foo>2 %} 
+          {% set  foo = 0 %}  </tr><tr>
+     {% endif %}
+     {% endif %}
+    
+    
+        {%  if i.article_id.Sfamille.libelle==var %}
+  <td> <div class="box about_box_line card" style="background-color: black;height:300px;width: 201px">
+                                            <div class="box-icon"  style="height: 200px;background-color: #333;width: 201px"> 
+      <img  src="{{ i.src }}"   style="height: 200px; width: 200px;" alt="Image" class="img-responsive">
+       <div class="inner_search">
+                <H3 class="white">{{i.article_id.libelle}}<br>
+                                                    prix :
+                                                    {{i.article_id.prix}} $</H3>
+                </div>
+            </div>
+            <div class="info">
+<br><br><br>
+<form method="GET" action="consulter" >
+ <input type="submit" value="consulter" class="but" >
+        <input type="hidden" name="produit" value="{{i.article_id.id}}">
+         <input type="hidden" name="jjjj" value="{{i.id}}"></form><br>
+          </div>
+         </div>
+  </td>
+{#          <td> {{ i.article_id.libelle}}</td><td> {{ i.article_id.prix}}$)</td>
+#}          
+  {% set  foo = foo+1 %}
+   {% if foo>2 %} 
+          {% set  foo = 0 %} </tr><tr>
+     {% endif %}
+{% endif %}
+
+        {%  if i.article_id.libelle==var %}
+  <td>  <div class="box about_box_line card" style="background-color: black;height:300px;width: 201px">
+                                            <div class="box-icon"  style="height: 200px;background-color: #333;width: 201px">
+           <img  src="{{ i.src }}"   style="height: 200px; width: 200px;" alt="Image" class="img-responsive">
+ <div class="inner_search">
+                <H3 class="white">{{i.article_id.libelle}}<br>
+                                                    prix :
+                                                    {{i.article_id.prix}} $</H3>
+                </div>
+            </div>
+            <div class="info"><br><br><br>
+<form method="GET" action="consulter" >
+ <input type="submit" value="consulter" class="but" >
+        <input type="hidden" name="produit" value="{{i.article_id.id}}">
+         <input type="hidden" name="jjjj" value="{{i.id}}"></form><br>
+          </div>
+         </div>
+  </td>
+{#          <td> {{ i.article_id.libelle}}</td><td> {{ i.article_id.prix}}$</td>
+#}        
+  {% set  foo = foo+1 %}
+   {% if foo>2 %} 
+          {% set  foo = 0 %} </tr><tr>
+     {% endif %}
+        {% endif %}
+        
+   
+{% endfor %}</tr> 
+</table>
+
+
+
+ </div> <!-- main-menu -->
+                     <!-- main-navigation -->
+                 <br><br> <br><br><br> <br><br><br> <br>
+                  
+{#                    <div class="content-main contact-content" style="height:1100px;background-color:transparent">
+#}                                  
+
+
+          
+               <footer class="row" >
+                   
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    
+            
+                </div>    
+            </footer>  <!-- .row -->      
+        </div> <!-- .container -->
+   <!-- .container -->
+   <!-- .main-body -->
+
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                                zoom: 16,
+                                center: new google.maps.LatLng(13.758468,100.567481),
+                                scrollwheel: false
+                            };  
+        
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+                calculateCenter();
+            });
+        
+            google.maps.event.addDomListener(window, 'resize', function() {
+                map.setCenter(center);
+            });
+        } // initialize
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+      
+        // DOM is ready.
+        $(document).ready(function(){
+            loadGoogleMap();
+        });
+    </script>
+</body>
+</html>
+{# empty Twig template #}

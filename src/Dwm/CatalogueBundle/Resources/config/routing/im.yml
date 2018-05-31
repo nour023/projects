@@ -1,0 +1,30 @@
+im:
+    pattern:  /
+    defaults: { _controller: "DwmCatalogueBundle:im:index" }
+
+im_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DwmCatalogueBundle:im:show" }
+
+im_new:
+    pattern:  /new
+    defaults: { _controller: "DwmCatalogueBundle:im:new" }
+
+im_create:
+    pattern:  /create
+    defaults: { _controller: "DwmCatalogueBundle:im:create" }
+    requirements: { _method: post }
+
+im_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DwmCatalogueBundle:im:edit" }
+
+im_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DwmCatalogueBundle:im:update" }
+    requirements: { _method: post|put }
+
+im_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DwmCatalogueBundle:im:delete" }
+    requirements: { _method: post|delete }

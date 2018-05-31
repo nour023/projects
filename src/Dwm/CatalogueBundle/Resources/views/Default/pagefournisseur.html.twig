@@ -1,0 +1,155 @@
+
+<head>
+   <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/red.css') }}" type="text/css" />
+ <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/button.css') }}" type="text/css" />
+ <link rel="stylesheet"  href="{{ asset('bundles/acmedemo/css/tabl.css') }}" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/botstrap.min.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/styll.css')}}" />
+ <link rel="stylesheet" type="text/css" href="{{ asset('bundles/acmedemo/css/button.css')}}" />
+
+
+
+ <link id="callCss" rel="stylesheet" href="{{ asset('bundles/acmedemo/themes/bootshop/bootstrap.min.css')}}" media="screen"/>
+ 
+<!--
+Accord Template
+http://www.templatemo.com/tm-478-accord
+--> 
+
+    <title></title>
+</head>
+
+<body class="contact-page">
+   <div id="main_container">
+  <div class="top_bar">
+    <div class="top_search">
+  
+      <form method="GET" action="deconnection">
+                    <input type="submit" name="dec" value="Déconnexion" class="but" >
+                    </form>
+  
+    </div>
+       <div class="left_menu_corner"></div>
+      <ul class="menu">
+        <li><a href="newArticle" class="nav1">Ajouter un article</a></li>
+        <li class="divider"></li>
+{#        <li><a href="vmodifFournisseur" class="nav2">Modifier informations</a></li></ul>
+#}        
+       </div> 
+    
+  </div>
+  
+    <div class="main-body">
+        <div class="container">
+            <br><br> <br>
+            
+            <table border="1" width="70%" bgcolor="white">
+            <tr >
+                <td><i>Nom du produit</i></td><td><i>Prix</i></td>
+                <td><i>Tva</i></td><td><i>Unite</i></td><td><i>Sous famille</i></td>
+            <td><i>SUPPRIMER</i></td><td><i>MODIFIER</i></td></tr>
+            {% for p in article %}
+                <tr>
+                    
+                   
+                    <td>
+                        {{ p.libelle }}
+                    </td>
+                    <td>
+                        {{ p.prix }}
+                    </td>
+                    <td>
+                        {{ p.tva }}
+                    </td>
+                    <td>
+                        {{ p.unite }}
+                    </td>
+                    <td>
+                        {{ p.Sfamille.id}}
+                    <td ><form method="get" action="suppArticle" >
+                            <i><input type="submit" name="ok" value="SUPPRIMER" class="buttt"></i>
+                            <input type="hidden" name="id" value="{{ p.id }}">
+                        </form>
+                    </td>
+                    <td ><form method="get" action="vmodifArticle">
+                            <i><input type="submit" name="ok" value="MODIFIER" class="buttt"></i>
+                            <input type="hidden" name="i" value="{{ p.id }}">
+                        </form>
+                    </td>
+                {% endfor %}
+                </tr>
+                </table>
+            
+            
+            
+                        </div> <!-- main-menu -->
+                     <!-- main-navigation -->
+                 <br><br> <br><br><br> <br><br><br> <br>
+                  
+{#                    <div class="content-main contact-content" style="height:1100px;background-color:transparent">
+#}                                  
+
+
+          
+               <footer class="row" >
+                   
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    
+            
+                </div>    
+            </footer>  <!-- .row -->      
+        </div> <!-- .container -->
+    </div> <!-- .main-body -->
+	
+ 
+            <!-- .row -->      
+        </div> <!-- .container -->
+   <!-- .main-body -->
+
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                                zoom: 16,
+                                center: new google.maps.LatLng(13.758468,100.567481),
+                                scrollwheel: false
+                            };  
+        
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+                calculateCenter();
+            });
+        
+            google.maps.event.addDomListener(window, 'resize', function() {
+                map.setCenter(center);
+            });
+        } // initialize
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+      
+        // DOM is ready.
+        $(document).ready(function(){
+            loadGoogleMap();
+        });
+    </script>
+</body>
+</html>
+{# empty Twig template #}

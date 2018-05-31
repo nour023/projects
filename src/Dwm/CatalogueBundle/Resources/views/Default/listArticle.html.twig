@@ -1,0 +1,100 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <html>
+    <head>
+        <title>  {% block title %}  {% endblock %}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body style="background-color: #999999">
+    <div id="entete" style="background-color:black;  height:50px" >
+        {% block entete %}
+            <img src="{{ asset('Dwm/CatalogueBundle/Ressources/public/images/1.jpg') }}" alt="Aceuil" width="28" height="28" /> 
+
+        {% endblock %}
+    </div>
+    <div id="main" style="float:left; width: 240px; height:650px;background-color:gray">
+        <h1 style="text-align: justify ; color: white ; font-style: oblique"><center>{{ block('title') }}</center> </h1>
+        <ul id="main">
+
+            <li><a style=" color: white" href="menu">Menu</a></li>
+            <li ><a style=" color: white" href="listFournisseur">Gerer Fournisseur</a></li>
+            <li ><a  style=" color: white" href="listFamille">Gerer Famille</a></li>
+            <li ><a style=" color: white" href="listSousFamille">Gerer Sous Famille</a></li>
+        </ul>
+    </div>
+    <div id="main" style="float:right; width: 240px; height:650px;background-color:gray">
+        {% block main %}
+
+        {% endblock %}
+
+    </div>
+    <div id="content" style="margin-left:245px;background-color:#999999">
+
+
+
+
+
+        <table border="2" width="70%" bgcolor="white">
+            <tr >
+                <td>id</td><td>code</td><td>libelle</td><td>prix</td><td>tva</td><td>unite</td><td>sous famille</td><td>SUPPRIMER</td><td>MODIFIER</td>
+            </tr>
+            {% for p in article %}
+                <tr>
+                    <td>
+                        {{ p.id }}
+                    </td>
+                    <td>
+                        {{ p.code }}
+                    </td>
+                    <td>
+                        {{ p.libelle }}
+                    </td>
+                    <td>
+                        {{ p.prix }}
+                    </td>
+                    <td>
+                        {{ p.tva }}
+                    </td>
+                    <td>
+                        {{ p.unite }}
+                    </td>
+                    <td>
+                        {{ p.Sfamille.id}}
+                    </td>
+
+                    <td ><form method="get" action="suppArticle" >
+                            <input type="submit" name="ok" value="SUPPRIMER">
+                            <input type="hidden" name="id" value="{{ p.id }}">
+                        </form>
+                    </td>
+                    <td ><form method="get" action="vmodifArticle">
+                            <input type="submit" name="ok" value="MODIFIER">
+                            <input type="hidden" name="i" value="{{ p.id }}">
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            
+        </table>
+
+        <li><a href="{{path('new_article')}}">Ajouter un article</a></li>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div id="footer" style="background-color :black;text-align:center;clear:both ; height:250px ">
+        <p  style="text-align: justify ; color: white  ;text-align: justify; font-style: oblique">Tous droits réservés </p>
+    </div>
+    </body>
+    </html>
+    border-right
+{% endblock %}

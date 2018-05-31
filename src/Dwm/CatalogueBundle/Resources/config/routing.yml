@@ -1,0 +1,4 @@
+dwm_catalogue_im:
+    resource: "@DwmCatalogueBundle/Resources/config/routing/im.yml"
+    prefix:   /im
+

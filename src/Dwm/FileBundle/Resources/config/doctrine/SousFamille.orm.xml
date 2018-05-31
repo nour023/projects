@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\SousFamille" table="sous_famille">
+    <indexes>
+      <index name="id_fam" columns="id_fam"/>
+    </indexes>
+    <id name="idSfam" type="integer" column="id_sfam">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="libSfam" type="string" column="lib_sfam" length="50" nullable="false"/>
+    <many-to-one field="idFam" target-entity="Famille">
+      <join-columns>
+        <join-column name="id_fam" referenced-column-name="id_famille"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

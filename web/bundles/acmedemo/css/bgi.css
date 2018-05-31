@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 avr. 2016, 14:04:52
+    Author     : HP
+*/
+
+
+
+
+
+
+body{
+    font-family:"trebuchet ms",sans-serif;
+ font-size:100%;
+
+      background-repeat: no-repeat;
+    
+    background-size: 100% 100%
+    
+
+}
+div.transbox {
+ text-align: left;
+  margin: 20px;
+ 
+  border: 2px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+ div.background {
+  
+      background-repeat: no-repeat;
+    
+    background-size: 100% 100%;
+    width: 150px;
+    height: 70px;
+ border-radius: 70%;
+}
+ div.back {
+ 
+    width: 100px;
+    height: 70px;
+ border-radius: 70%;
+}
+input,input[type=submit] {
+ padding:3px;
+ border:1px solid black;
+ border-radius:5px;
+ width:150px;
+ box-shadow:1px 1px 1px grey;
+ }
+a:link, a:visited {
+
+    color:black;
+   
+    text-transform: capitalize;
+    text-decoration: none;
+   
+}
+a:hover {
+    text-decoration: underline;
+    
+    color:  #D3D3D3;
+
+}
+
+
+
+   
+title{
+    text-align: justify ; 
+    color: chocolate ;
+    font-style: oblique;
+}
+ 

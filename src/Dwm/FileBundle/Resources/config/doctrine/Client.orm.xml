@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FileBundle\Entity\Client" table="client">
+    <id name="idClient" type="integer" column="id_client">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="raisonSocial" type="string" column="Raison_social" length="50" nullable="true"/>
+    <field name="adresse" type="text" column="adresse" length="65535" nullable="true"/>
+    <field name="login" type="string" column="login" length="50" nullable="true"/>
+    <field name="pwd" type="string" column="pwd" length="50" nullable="true"/>
+    <field name="tel" type="integer" column="tel" nullable="true"/>
+    <field name="rib" type="string" column="rib" length="50" nullable="true"/>
+    <field name="banque" type="string" column="banque" length="50" nullable="true"/>
+  </entity>
+</doctrine-mapping>

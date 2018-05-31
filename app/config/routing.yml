@@ -1,0 +1,9 @@
+dwm_file:
+    resource: "@DwmFileBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dwm_catalogue:
+    resource: "@DwmCatalogueBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
